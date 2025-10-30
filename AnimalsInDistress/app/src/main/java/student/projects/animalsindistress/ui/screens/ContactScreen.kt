@@ -244,7 +244,7 @@ fun ContactScreen() {
                 shape = RoundedCornerShape(8.dp)
             ) {
                 Column(modifier = Modifier.padding(20.dp)) {
-                    Text(
+        Text(
                         "Send us a Message",
                         style = MaterialTheme.typography.titleLarge.copy(fontWeight = FontWeight.Bold),
                         fontSize = 20.sp
@@ -300,10 +300,10 @@ fun ContactScreen() {
                         onValueChange = { phone = it },
                         modifier = Modifier.fillMaxWidth(),
                         singleLine = true
-                    )
-                    
-                    Spacer(Modifier.height(12.dp))
-                    
+        )
+
+        Spacer(Modifier.height(12.dp))
+
                     // Subject Dropdown
                     Text("Subject *", style = MaterialTheme.typography.bodySmall.copy(fontWeight = FontWeight.Medium))
                     Spacer(Modifier.height(4.dp))
@@ -347,9 +347,9 @@ fun ContactScreen() {
                         minLines = 6,
                         placeholder = { Text("Please provide details about your inquiry...") }
                     )
-                    
-                    Spacer(Modifier.height(16.dp))
-                    
+
+        Spacer(Modifier.height(16.dp))
+
                     // Submit Button
                     Button(
                         onClick = { /* Handle submit */ },

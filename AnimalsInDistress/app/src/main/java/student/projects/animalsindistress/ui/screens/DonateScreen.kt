@@ -434,12 +434,12 @@ private fun ImpactRow(amount: String, description: String) {
         )
         Spacer(Modifier.width(12.dp))
         Column {
-            Text(
+        Text(
                 amount,
                 style = MaterialTheme.typography.bodyMedium.copy(fontWeight = FontWeight.SemiBold),
                 fontSize = 14.sp
             )
-            Text(
+        Text(
                 description,
                 style = MaterialTheme.typography.bodySmall,
                 color = MutedForeground,

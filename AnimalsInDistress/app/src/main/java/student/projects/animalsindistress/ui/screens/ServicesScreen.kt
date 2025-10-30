@@ -351,7 +351,7 @@ private fun ServiceCard(
                     fontSize = 15.sp
                 )
                 Spacer(Modifier.height(4.dp))
-                Text(
+        Text(
                     description,
                     style = MaterialTheme.typography.bodySmall,
                     color = MutedForeground,
