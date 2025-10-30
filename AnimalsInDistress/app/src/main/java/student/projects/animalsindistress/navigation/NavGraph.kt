@@ -32,6 +32,7 @@ import student.projects.animalsindistress.ui.screens.NotFoundScreen
 import student.projects.animalsindistress.ui.screens.HomeScreen
 import student.projects.animalsindistress.ui.screens.HeartSoleStoreScreen
 import student.projects.animalsindistress.ui.screens.GolfDay2025Screen
+import student.projects.animalsindistress.ui.screens.MoreScreen
 
 sealed class Route(val path: String) {
     data object Home : Route("home")
@@ -61,6 +62,7 @@ sealed class Route(val path: String) {
     data object TaxCertificate : Route("tax-certificate")
     data object HeartSoleStore : Route("heart-sole-store")
     data object GolfDay2025 : Route("golf-day-2025")
+    data object More : Route("more")
     data object NotFound : Route("not-found")
 }
 
@@ -102,6 +104,7 @@ fun AppNavHost(navController: NavHostController) {
         composable(Route.TaxCertificate.path) { TaxCertificateScreen() }
         composable(Route.HeartSoleStore.path) { HeartSoleStoreScreen() }
         composable(Route.GolfDay2025.path) { GolfDay2025Screen() }
+        composable(Route.More.path) { MoreScreen(onNavigate = { route -> navController.navigate(route) }) }
         composable(Route.NotFound.path) { NotFoundScreen() }
     }
 }

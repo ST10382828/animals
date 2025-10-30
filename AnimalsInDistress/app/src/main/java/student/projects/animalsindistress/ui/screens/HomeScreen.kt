@@ -33,8 +33,8 @@ fun HomeScreen(onDonateClick: () -> Unit, onNavigate: (String) -> Unit = {}) {
         verticalArrangement = Arrangement.spacedBy(0.dp),
         contentPadding = PaddingValues(bottom = 32.dp)
     ) {
-        // Important Announcement
-        item { ImportantAnnouncement() }
+        // Important Announcement - Commented out
+        // item { ImportantAnnouncement() }
         
         // Hero Section
         item {

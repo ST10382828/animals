@@ -20,7 +20,7 @@ import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
 import student.projects.animalsindistress.ui.theme.*
 
-@OptIn(ExperimentalMaterial3Api::class)
+@OptIn(ExperimentalMaterial3Api::class, ExperimentalLayoutApi::class)
 @Composable
 fun GalleryScreen() {
     var activeCategory by remember { mutableStateOf("all") }
@@ -41,50 +41,41 @@ fun GalleryScreen() {
             .fillMaxSize()
             .background(Background)
     ) {
-        // Header
-        Column(
+        // Compact Header
+        Text(
+            "Gallery",
+            style = MaterialTheme.typography.headlineSmall.copy(
+                fontWeight = FontWeight.Bold
+            ),
+            color = Foreground,
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(16.dp),
-            horizontalAlignment = Alignment.CenterHorizontally
-        ) {
-            Text(
-                "Gallery",
-                style = MaterialTheme.typography.headlineMedium.copy(
-                    fontWeight = FontWeight.Bold,
-                    fontSize = 28.sp
-                ),
-                color = Foreground,
-                textAlign = TextAlign.Center
-            )
-            Spacer(Modifier.height(8.dp))
-            Text(
-                "Photos from our work and events",
-                style = MaterialTheme.typography.bodyMedium,
-                color = MutedForeground,
-                textAlign = TextAlign.Center
-            )
-        }
+                .padding(top = 12.dp, bottom = 8.dp),
+            textAlign = TextAlign.Center
+        )
         
-        // Category Filter
-        Row(
+        // Compact Category Filter - Using FlowRow to wrap chips
+        FlowRow(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(horizontal = 16.dp)
-                .padding(bottom = 16.dp),
-            horizontalArrangement = Arrangement.spacedBy(8.dp, Alignment.CenterHorizontally)
+                .padding(horizontal = 12.dp)
+                .padding(bottom = 8.dp),
+            horizontalArrangement = Arrangement.spacedBy(6.dp),
+            verticalArrangement = Arrangement.spacedBy(6.dp),
+            maxItemsInEachRow = Int.MAX_VALUE
         ) {
             galleryCategories.forEach { (key, label) ->
                 FilterChip(
                     selected = activeCategory == key,
                     onClick = { activeCategory = key },
-                    label = { Text(label, fontSize = 13.sp) },
+                    label = { Text(label, fontSize = 11.sp) },
                     colors = FilterChipDefaults.filterChipColors(
                         selectedContainerColor = Primary,
                         selectedLabelColor = PrimaryForeground,
                         containerColor = Color.White,
                         labelColor = MutedForeground
-                    )
+                    ),
+                    modifier = Modifier.height(28.dp)
                 )
             }
         }
