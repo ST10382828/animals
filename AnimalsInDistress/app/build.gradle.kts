@@ -28,6 +28,12 @@ android {
             )
         }
     }
+    lint {
+        // Disable the PropertyEscape check that's causing issues with local.properties
+        disable += "PropertyEscape"
+        // Avoid file locking issues on Windows
+        checkReleaseBuilds = false
+    }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11

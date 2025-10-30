@@ -20,6 +20,7 @@ import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
 import student.projects.animalsindistress.ui.theme.*
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun GalleryScreen() {
     var activeCategory by remember { mutableStateOf("all") }
@@ -83,9 +84,6 @@ fun GalleryScreen() {
                         selectedLabelColor = PrimaryForeground,
                         containerColor = Color.White,
                         labelColor = MutedForeground
-                    ),
-                    border = if (activeCategory == key) null else FilterChipDefaults.filterChipBorder(
-                        borderColor = Border
                     )
                 )
             }

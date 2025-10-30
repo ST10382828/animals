@@ -20,6 +20,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import student.projects.animalsindistress.ui.theme.*
 
+@OptIn(ExperimentalMaterial3Api::class)
+
 @Composable
 fun ContactScreen() {
     val context = LocalContext.current
